@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  api.laravel:
+    build: .
+    env_file:
+      - .env.dev
+    environment:
+      TZ: "America/Monterrey"
+      JWT_TTL: "60"
+      API_DOCUMENTOS: "http://10.200.4.105:8086/api/ApiDoc"
+      RUTA_FOLDER_FTP: "/JAGUEDO/"
+      IdApp: "fa82e267-3087-11ed-aed0-040300000000"
+      api_base: "http://192.168.100.161:5000/api/"
+      IdTiposAdquisicion: "9a142daf-004c-4153-8863-63d954ff52e9"
+      APP_URL: "http://10.200.4.105:8081"
+      IdEmpleado: "9a93901b-54f6-4934-946a-a09afcf11fcd"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor
+      - /var/www/html/public
+      - /var/www/html/storage
+      - /var/www/html/bootstrap/cache
+    ports:
+      - "8082:80"
+    restart: always
