@@ -10,6 +10,7 @@ COPY . .
 # Instala todas las dependencias de Composer en un solo paso para reducir las capas
 RUN composer install && \
     composer require \
+    composer dump-autoload \
     tymon/jwt-auth \
     symfony/psr-http-message-bridge \
     nyholm/psr7 \

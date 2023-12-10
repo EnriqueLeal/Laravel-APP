@@ -1,3 +1,4 @@
+<?php
 namespace App\Http\Controllers;
 use App\Repositories\UsuarioRepository;
 use Illuminate\Http\Request;
@@ -13,9 +14,21 @@ class UsuarioController extends Controller
 
     public function index()
     {
-        $usuarios = $this->usuarioRepository->all();
-        return view('usuarios.index', compact('usuarios'));
+        try {
+            $usuarios = $this->usuarioRepository->all();
+            return response()->json(['usuarios' => $usuarios], 200);
+        } catch (\Exception $e)z|{
+            return response()->json(['error' => 'Error interno del servidor'], 500);
+        }
     }
+
+    public function login(Request $request)
+    {
+        // Lógica para iniciar sesión
+        return response()->json(['']);
+    }
+
+
 
     public function show($id)
     {

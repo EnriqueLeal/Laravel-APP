@@ -8,12 +8,12 @@ services:
     environment:
       TZ: "America/Monterrey"
       JWT_TTL: "60"
-      API_DOCUMENTOS: "http://10.200.4.105:8086/api/ApiDoc"
-      RUTA_FOLDER_FTP: "/JAGUEDO/"
+      #API_DOCUMENTOS: ""
+      #RUTA_FOLDER_FTP: "//"
       IdApp: "fa82e267-3087-11ed-aed0-040300000000"
-      api_base: "http://192.168.100.161:5000/api/"
+      api_base: "http://localhost:5000/api/"
       IdTiposAdquisicion: "9a142daf-004c-4153-8863-63d954ff52e9"
-      APP_URL: "http://10.200.4.105:8081"
+      APP_URL: "http://localhost:8082"
       IdEmpleado: "9a93901b-54f6-4934-946a-a09afcf11fcd"
     volumes:
       - .:/var/www/html

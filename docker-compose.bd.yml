@@ -6,11 +6,11 @@ services:
       - SYS_NICE
     restart: always
     environment:
-      - MYSQL_DATABASE=sepi2022
+      - MYSQL_DATABASE=Proyecto
       - MYSQL_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
     command: --default-authentication-plugin=mysql_native_password
     ports:
-      - '3308:3306'
+      - '3306:3306'
     volumes:
       - db:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
